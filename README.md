@@ -1,6 +1,9 @@
-# parser_on_avito
+# Parser on Avito
 
-The code that implements the parsing of ads on Avito.
-The input is the name of the product, the output is a CSV file with information about the ads (name, link, price, address, date).
+## Описание
+Код, реализующий парсинг объявлений на Avito. Входными данными является название товара, выходными - CSV-файл с информацией об объявлениях (название, ссылка, цена, адрес, дата).
 
-It is possible to display the results in sorted order: by date, by default, first more expensive and first cheaper.
+Можно отобразить результаты в отсортированном порядке: по дате, по умолчанию, сначала дороже и сначала дешевле.
+
+## Установка
+Зависимости, необходимые для работы, указаны в файле pyproject.toml.
