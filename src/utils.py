@@ -94,7 +94,7 @@ def get_processed_data(ads_data_to_processing):
 
 def get_sorting_type(sort_type):
     """
-    Возвращает код сортировки объявлений
+    Возвращает код сортировки объявлений, если тип сортировки введен неверно, то выбирается сортировка по умолчанию
     :param sort_type: тип сортировки
     :return: код сортировки
     """
@@ -108,6 +108,8 @@ def get_sorting_type(sort_type):
         return 2
     elif sort_type == 'по дате':
         return 3
+    else:
+        return ''
 
 
 def save_to_csv(ads_data):
