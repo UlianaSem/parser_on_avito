@@ -46,22 +46,22 @@ def get_data_from_ad(ad_data, index, ad, page):
     :param page: номер страницы с объявлениями
     :return: словарь с данными об объявлениях
     """
-    # getting data from each ad
+    # получаем данные каждого объявления
     ad_id = str(page) + '.' + str(index + 1)
     ad_data[ad_id] = {}
-    # find name
+    # находим название
     name = ad.find('h3',
                    class_='title-root-zZCwT iva-item-title-py3i_ title-listRedesign-_rejR title-root_maxHeight-X6PsH '
                           'text-text-LurtD text-size-s-BxGpL text-bold-SinUO').text
-    # find url
+    # находим url
     url = 'https://www.avito.ru' + ad.find('a', class_='iva-item-sliderLink-uLz1v').get('href')
-    # find price
+    # находим цену
     price = ad.find('span', class_='price-text-_YGDY text-text-LurtD text-size-s-BxGpL').text
-    # find address
+    # находим адрес
     address = ad.find('div', class_='geo-root-zPwRk iva-item-geo-_Owyg').text
-    # find date
+    # находим дату
     date = ad.find('div', class_='date-text-KmWDf text-text-LurtD text-size-s-BxGpL text-color-noaccent-P1Rfs').text
-    # adding data to the dictionary
+    # добавляем данные в словарь
     ad_data[ad_id]['name'] = name
     ad_data[ad_id]['url'] = url
     ad_data[ad_id]['price'] = price.replace('\xa0', ' ')
