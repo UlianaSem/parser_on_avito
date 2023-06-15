@@ -51,16 +51,21 @@ def get_data_from_ad(ad_data, index, ad, page):
     ad_data[ad_id] = {}
     # находим название
     name = ad.find('h3',
-                   class_='title-root-zZCwT iva-item-title-py3i_ title-listRedesign-_rejR title-root_maxHeight-X6PsH '
-                          'text-text-LurtD text-size-s-BxGpL text-bold-SinUO').text
+                   class_='styles-module-root-TWVKW styles-module-root-_KFFt styles-module-size_l-_oGDF styles-module-'
+                          'size_l-hruVE styles-module-ellipsis-LKWy3 styles-module-weight_bold-Kpd5F stylesMarningNorm'
+                          'al-module-root-OSCNq stylesMarningNormal-module-header-l-qvNIS').text
     # находим url
     url = 'https://www.avito.ru' + ad.find('a', class_='iva-item-sliderLink-uLz1v').get('href')
     # находим цену
-    price = ad.find('span', class_='price-text-_YGDY text-text-LurtD text-size-s-BxGpL').text
+    price = ad.find('p', class_='styles-module-root-_KFFt styles-module-size_l-_oGDF styles-module-size_l_dense-Wae_G '
+                                'styles-module-size_l-hruVE styles-module-size_l_dense-xTg_p stylesMarningNormal-modul'
+                                'e-root-OSCNq stylesMarningNormal-module-paragraph-l-dense-TTLmp').text
     # находим адрес
-    address = ad.find('div', class_='geo-root-zPwRk iva-item-geo-_Owyg').text
+    address = ad.find('div', class_='geo-root-zPwRk').text
     # находим дату
-    date = ad.find('div', class_='date-text-KmWDf text-text-LurtD text-size-s-BxGpL text-color-noaccent-P1Rfs').text
+    date = ad.find('p', class_='styles-module-root-_KFFt styles-module-size_s-awPvv styles-module-size_s-_P6ZA stylesMa'
+                               'rningNormal-module-root-OSCNq stylesMarningNormal-module-paragraph-s-_c6vD styles-modu'
+                               'le-noAccent-nZxz7').text
     # добавляем данные в словарь
     ad_data[ad_id]['name'] = name
     ad_data[ad_id]['url'] = url
